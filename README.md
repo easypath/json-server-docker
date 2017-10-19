@@ -17,3 +17,6 @@
 `CMD ["sh", "-c", "$NPM_CONFIG_PREFIX/bin/json-server --ro $JSONFILE"]`
 - Build the container:
 `docker-compose up --build -d`
+
+## Notes:
+- Each item must have unique "id" key, otherwise json-server cannot edit/delete items
