@@ -1,0 +1,24 @@
+version: "3.2"
+services:
+
+  json-server:
+    image: easypath/json-server:latest
+    ports:
+      # json-server runs on port 3000 by default
+      - target: 3000
+        # Port to bind on Docker host
+        published: 9090
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: .
+        target: /json-server
+        # Uncomment to make volume read-only
+        #read_only: true
+    build:
+      context: .
+    working_dir: /json-server
+    environment:
+      # Database file location, default is db/db.json
+      - JSONFILE=db/db.json
+    restart: on-failure
