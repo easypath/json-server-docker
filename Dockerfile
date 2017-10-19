@@ -17,4 +17,4 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 RUN npm install -g json-server
 
 # Launch server
-CMD ["sh", "-c", "$NPM_CONFIG_PREFIX/bin/json-server $JSONFILE"]
+CMD ["sh", "-c", "$NPM_CONFIG_PREFIX/bin/json-server --watch $JSONFILE"]
